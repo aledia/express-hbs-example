@@ -23,12 +23,14 @@ app.get("/", (req, res) => {
     }
 
     class CityImg {
-        constructor(city, country, streets, imgSrc) {
+        constructor(city, country, streets, htmlTest, imgSrc, salary) {
             if (city.length === 1)  throw new Error("length is not enough")
             this.city = city
             this.streets = streets
             this.country = country
+            this.htmlTest = htmlTest
             this.imgSrc = imgSrc
+            this.salary = salary * 1.21
         }
     }
 
@@ -48,13 +50,28 @@ app.get("/", (req, res) => {
                 name: "st3",
                 postcode: 28942
             }],
-            "img/stockholm.jpg"
+            "<span>Hola stockholm</span>",
+            "img/stockholm.jpg",
+            100000
         ),
         new CityImg(
             toUpper("madrid"), 
             toUpper("spain"), 
-            ["stM1", "stM2", "stM3","stM4"],
-            "img/stockholm.jpg"
+            [{
+                name: "st1",
+                postcode: 28940
+            },
+            {
+                name: "st2",
+                postcode: 28941
+            },
+            {
+                name: "st3",
+                postcode: 28942
+            }],
+            "<span>Hola madrid</span>",
+            "img/stockholm.jpg",
+            200000
         )
     ];
 

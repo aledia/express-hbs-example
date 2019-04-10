@@ -5,6 +5,10 @@ body {
 img {
     height: 200px;
 }
+
+ol {
+    list-style-type: decimal;
+}
 /* 
 h3 span{
     text-transform: capitalize;

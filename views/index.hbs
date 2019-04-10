@@ -12,10 +12,18 @@
     <h3>The photo you are seeing is in <span>{{city}}</span> of <span>{{country}}</span></h3>
     <img src="{{imgSrc}}" alt="" height="100">
 
-    <ul>
+    {{toFixed salary 2}}
+
+    {{#is city "Stockholm"}}
+    <h4>Additional stockholm info</h4>
+    {{/is}}
+
+    {{{htmlTest}}}
+
+    <ol>
         {{#each streets}}
-            <li>St name: {{capitalizeFirst this.name}}, st. postcode: {{this.postcode}}</li>
+            <li class="item-{{@index}}">{{@value}} name: {{capitalizeFirst this.name}}, st. postcode: {{this.postcode}}</li>
         {{/each}}
-    </ul>
+    </ol>
 </body>
 </html>
